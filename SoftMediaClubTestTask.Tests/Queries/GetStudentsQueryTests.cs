@@ -25,7 +25,6 @@ namespace SoftMediaClubTestTask.Tests.Queries
             var students = new List<Student> {
                 new Student
                 {
-                    AcademicPerformanceTypeId = 1,
                     DateOfBirth = new DateTime(1980, 1, 1),
                     Firstname = "Test",
                     Lastname = "Test",
@@ -33,7 +32,6 @@ namespace SoftMediaClubTestTask.Tests.Queries
                 },
                 new Student
                 {
-                    AcademicPerformanceTypeId = 1,
                     DateOfBirth = new DateTime(1981, 1, 1),
                     Firstname = "Test1",
                     Lastname = "Test1",
@@ -45,7 +43,6 @@ namespace SoftMediaClubTestTask.Tests.Queries
             {
                 Code = "A",
                 Description = "Отлично",
-                Id = 1
             };
 
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
@@ -53,6 +50,7 @@ namespace SoftMediaClubTestTask.Tests.Queries
             DbContextOptions<ApplicationDbContext> options = builder.Options;
             using (var context = new ApplicationDbContext(options))
             {
+                context.Database.EnsureDeleted();
                 context.AcademicPerformanceTypes.Add(performanceType);
                 await context.SaveChangesAsync();
                 foreach (Student student in students)

@@ -34,7 +34,6 @@ namespace SoftMediaClubTestTask.Tests.Commands
             {
                 Code = "A",
                 Description = "Отлично",
-                Id = 1
             };
 
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
@@ -42,6 +41,7 @@ namespace SoftMediaClubTestTask.Tests.Commands
             DbContextOptions<ApplicationDbContext> options = builder.Options;
             using (var context = new ApplicationDbContext(options))
             {
+                context.Database.EnsureDeleted();
                 context.AcademicPerformanceTypes.Add(performanceType);
                 await context.SaveChangesAsync();
                 student.AcademicPerformanceTypeId = performanceType.Id;
