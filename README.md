@@ -4,7 +4,7 @@
 Url swagger'а  - `{base_url}/swagger`
 
 # Описание
-1) Пытался сделать проект с чистой архитектурой разбив каждый функционал бизнес логики на UseCase(interface)/Interactors(implementation), причем на каждый UseCase только один публичный метод Execute/ExecuteAsync, то есть принцип соблюдается принцип единственной ответственности из SOLID
+1) Пытался сделать проект с чистой архитектурой разбив каждый функционал бизнес логики на UseCase(interface)/Interactors(implementation), причем на каждый UseCase только один публичный метод Execute/ExecuteAsync, то есть соблюдается принцип единственной ответственности из SOLID
 2) Не стал использовать паттерн "repository" и вместо них использовал абстракции query(select) и commands(insert, update, delete)  
    Это позаимствовал с паттерна cqrs(запросы(query) и команды(command))
 3) Каждый слой использует свои модели, слои: controller => useCase => command or query
