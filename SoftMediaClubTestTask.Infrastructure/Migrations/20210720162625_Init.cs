@@ -30,7 +30,7 @@ namespace SoftMediaClubTestTask.Infrastructure.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Firstname = table.Column<string>(type: "character varying(128)", maxLength: 128, nullable: false),
                     Lastname = table.Column<string>(type: "character varying(128)", maxLength: 128, nullable: false),
-                    Middlename = table.Column<string>(type: "text", nullable: true),
+                    Middlename = table.Column<string>(type: "character varying(128)", maxLength: 128, nullable: true),
                     DateOfBirth = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     AcademicPerformanceTypeId = table.Column<int>(type: "integer", nullable: false),
                     DeleteDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),

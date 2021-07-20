@@ -22,6 +22,8 @@ namespace SoftMediaClubTestTask.Infrastructure.Data.Config
             builder.Property(p => p.Lastname)
                 .HasMaxLength(128)
                 .IsRequired();
+            builder.Property(p => p.Middlename)
+                .HasMaxLength(128);
             builder.HasOne(p => p.AcademicPerformanceType)
                 .WithMany(p => p.Students)
                 .HasForeignKey(p => p.AcademicPerformanceTypeId)

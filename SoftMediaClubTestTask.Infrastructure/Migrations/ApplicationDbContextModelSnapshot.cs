@@ -98,7 +98,8 @@ namespace SoftMediaClubTestTask.Infrastructure.Migrations
                         .HasColumnType("character varying(128)");
 
                     b.Property<string>("Middlename")
-                        .HasColumnType("text");
+                        .HasMaxLength(128)
+                        .HasColumnType("character varying(128)");
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("timestamp without time zone");

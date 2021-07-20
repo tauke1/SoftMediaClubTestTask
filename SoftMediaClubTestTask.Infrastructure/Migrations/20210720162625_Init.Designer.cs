@@ -10,7 +10,7 @@ using SoftMediaClubTestTask.Infrastructure.Data;
 namespace SoftMediaClubTestTask.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210720121056_Init")]
+    [Migration("20210720162625_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -100,7 +100,8 @@ namespace SoftMediaClubTestTask.Infrastructure.Migrations
                         .HasColumnType("character varying(128)");
 
                     b.Property<string>("Middlename")
-                        .HasColumnType("text");
+                        .HasMaxLength(128)
+                        .HasColumnType("character varying(128)");
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("timestamp without time zone");
