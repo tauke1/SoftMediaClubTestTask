@@ -8,6 +8,7 @@ Url swagger'а  - `{base_url}/swagger`
 2) Не стал использовать паттерн "repository" и вместо них использовал абстракции query(select) и commands(insert, update, delete)  
    Это позаимствовал с паттерна cqrs(запросы(query) и команды(command))
 3) Каждый слой использует свои модели, слои: controller => useCase => command or query
+4) Использовался fluent api для entity framework и fluent validation для валидации данных с апи запросов
 
 # Unit тесты
 Написал по одному юнит тесту на каждую категорию тестов, думаю для тестового задания это достаточно
