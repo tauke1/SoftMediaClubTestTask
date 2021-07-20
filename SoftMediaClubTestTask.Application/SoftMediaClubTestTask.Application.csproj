@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -10,16 +10,6 @@
 
   <ItemGroup>
     <None Remove="Repositories\" />
-    <None Remove="Repositories\Base\" />
     <None Remove="UseCases\" />
-    <None Remove="UseCases\Student\" />
-    <None Remove="UseCases\AcademicPerformanceType\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-    <Folder Include="Repositories\Base\" />
-    <Folder Include="UseCases\" />
-    <Folder Include="UseCases\Students\" />
-    <Folder Include="UseCases\AcademicPerformanceTypes\" />
   </ItemGroup>
 </Project>
